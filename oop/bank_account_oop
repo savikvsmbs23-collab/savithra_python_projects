@@ -1,0 +1,32 @@
+class BankAccount:
+    def __init__(self, owner):
+        self.owner = owner
+        self.balance = 0
+        self.transactions = []
+    def deposit(self,amount):
+        self.balance += amount
+        self.transactions.append(f"Deposited amount ${amount} for the account {self.owner}")
+
+    def withdraw(self, amount):
+        if self.balance-amount >= 0:
+            self.balance-= amount
+            self.transactions.append(f"Withdrew amount ${amount} for the account {self.owner}")
+        else:
+            print(f"Insufficent balance for the account {self.owner}")
+    def get_statement(self):
+        for items in self.transactions:
+            print(items)
+        print(f"The balance for the account {self.owner} is {self.balance}")
+
+
+acc1 = BankAccount("Savi")
+acc2 = BankAccount("John")
+
+acc1.deposit(500)
+acc1.deposit(200)
+acc1.withdraw(100)
+acc1.get_statement()
+
+acc2.deposit(1000)
+acc2.withdraw(2000)
+acc2.get_statement()
