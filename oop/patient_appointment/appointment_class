@@ -1,0 +1,8 @@
+class Appointment:
+    def __init__(self, pat_obj, doctor, date):
+        self.patient = pat_obj
+        self.doctor = doctor
+        self.date = date
+
+    def get_summary(self):
+        return f"Patient: {self.patient.name}, Age: {self.patient.age}, Disease: {self.patient.disease}, Doctor: {self.doctor}, Date: {self.date}"
